@@ -1,4 +1,4 @@
-const routinify = {
+export const routinify = {
     project_name: 'Routinify',
     project_redirect_app: 'https://routinify.herokuapp.com/',
     project_redirect_github: 'https://github.com/Keaton-Brewster/project-2',
@@ -7,7 +7,7 @@ const routinify = {
     add any other users to your groups to participate in group task management`
 }
 
-const noteTaker = {
+export const noteTaker = {
     project_name: 'Notes Web App',
     project_redirect_app: 'https://notetaker-keatonbrewster.herokuapp.com/',
     project_redirect_github: 'https://github.com/Keaton-Brewster/Note-Taking-WebApp',
@@ -15,7 +15,7 @@ const noteTaker = {
     for personal, or professional use`
 }
 
-const pair = {
+export const pair = {
     project_name: 'PAIR',
     project_redirect_app: 'https://brandyquinlan.github.io/PAIR/',
     project_redirect_github: 'https://github.com/brandyquinlan/PAIR',
@@ -24,7 +24,7 @@ const pair = {
     and behind the bar by providing you with recipes for food AND drinks, all in one place`
 }
 
-const weatherDashboard = {
+export const weatherDashboard = {
     project_name: 'Weather Dashboard',
     project_redirect_app: 'https://keaton-brewster.github.io/Weather-Dashboard/',
     project_redirect_github: 'https://github.com/Keaton-Brewster/Weather-Dashboard',
@@ -32,7 +32,7 @@ const weatherDashboard = {
     locations. Great for day-to-day use, or for planning a trip to a new location!`
 }
 
-const workDayPlanner = {
+export const workDayPlanner = {
     project_name: 'Work Day Planner',
     project_redirect_app: 'https://keaton-brewster.github.io/Work-Day-Planner/',
     project_redirect_github: 'https://github.com/Keaton-Brewster/Work-Day-Planner',
@@ -40,6 +40,4 @@ const workDayPlanner = {
     to display current hour, and hours past`
 }
 
-const works = [routinify, noteTaker, pair, weatherDashboard, workDayPlanner]
-export default works
  
