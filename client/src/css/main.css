@@ -1,0 +1,425 @@
+:root {
+  --primary: #214aff;
+  --primary-light: #4164ff;
+  --secondary: #e6cf09;
+  --grey: #404346;
+  --dark: #221d1b;
+  --light: #f6f6f4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
+  cursor: default;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 * {
+  font-weight: 600 !important;
+}
+
+p * {
+  font-weight: 100 !important;
+}
+
+/* redefining color classes */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+.bg-primary_light {
+  background-color: var(--primary_light) !important;
+}
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+.bg-dark {
+  background-color: var(--dark) !important;
+}
+.bg-light {
+  background-color: var(--light) !important;
+}
+.bg-grey {
+  background-color: var(--grey) !important;
+}
+
+/* FOR LARGE AND XL SCREENS */
+@media screen and (min-width: 992px) {
+  /* MAIN CONTENT */
+  html,
+  body,
+  .body {
+    height: 100%;
+    margin: 0;
+    background-color: var(--dark);
+  }
+  [name="main-page"] {
+    margin-top: 10rem;
+    padding-right: 15em;
+  }
+  [name="about_me-page"],
+  [name="contact_me-page"] {
+    padding-right: 5em;
+  }
+
+  [name="my_work-page"] div {
+    margin-top: 1rem;
+  }
+
+  #socials {
+    height: 100%;
+    border: none;
+  }
+
+  #socials a {
+    color: var(--primary);
+  }
+
+  /* NAVBAR STUFF */
+  nav {
+    min-height: 100%;
+    width: 10em;
+    position: fixed;
+    padding: 0 !important;
+    margin: 0;
+  }
+  nav button {
+    box-sizing: border-box;
+    border-style: none;
+    padding: 0.5rem;
+    margin-top: 4rem !important;
+    min-width: fit-content;
+    letter-spacing: 0.25rem;
+  }
+
+  /* LOGO STYLING */
+  .logo-span {
+    font-size: 90pt;
+    font-weight: 800;
+  }
+
+  #logo-K {
+    position: relative;
+    left: 10px;
+  }
+
+  #logo-B {
+    position: relative;
+    right: 10px;
+  }
+
+  aside {
+    max-height: 100px;
+  }
+
+  /* END LARGER QUERY */
+}
+
+/* FOR MEDIUM SCREENS */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  /* MAIN CONTENT */
+  [name="main-page"] {
+    color: var(--light);
+  }
+  [name="about_me-page"], [name="my_work-page"],
+  [name="contact_me-page"] {
+    color: var(--light);
+  }
+
+  div[name="my_work-page"] div div:hover {
+    cursor: pointer;
+  }
+
+   #socials {
+    position: absolute;
+    /* height: 100%; */
+    border: none;
+    right: 2rem;
+    top: 6rem;
+  }
+  #socials a {
+    color: var(--primary);
+    margin: 30% 0;
+  }
+
+  /* NAVBAR STYLING */
+  nav {
+    padding: 0 1rem !important;
+  }
+  nav button {
+    background: var(--secondary);
+    box-sizing: border-box;
+    border-style: none;
+    padding: 0.5rem;
+    min-width: fit-content;
+    letter-spacing: 0.25rem;
+  }
+
+  /* LOGO STYLING */
+  .logo-span {
+    font-size: 40pt;
+    font-weight: 800;
+  }
+
+  #logo-K {
+    position: relative;
+    left: 6px;
+  }
+
+  #logo-B {
+    position: relative;
+    right: 6px;
+  }
+
+  /* END MED/SMALL QUERY */
+}
+
+/* MOBILE SCREEN QUERY */
+@media screen and (max-width: 767px) {
+  /* MAIN CONTENT */
+  [name="main-page"] {
+    color: var(--light);
+    padding: 0 1rem;
+    padding-bottom: 5rem;
+  }
+  [name="about_me-page"], [name="my_work-page"],
+  [name="contact_me-page"] {
+    color: var(--light);
+    padding: 0 1rem;
+    padding-bottom: 5rem;
+  }
+
+  [name="my_work-page"] div {
+    margin-top: 1rem;
+  }
+
+  #socials {
+    height: 60px;
+    border: none;
+  }
+  #socials a {
+    font-size: 20pt;
+    color: var(--grey);
+    margin-top: .5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  /* NAVBAR STYLING */
+  nav {
+    padding: 0 1rem !important;
+    margin-bottom: 2rem;
+  }
+  nav ul {
+    position: fixed;
+    right: 1.25rem;
+  }
+  nav button {
+    background: var(--secondary);
+    box-sizing: border-box;
+    border-style: none;
+    padding: 0.5rem;
+    min-width: 100%;
+    letter-spacing: 0.25rem;
+  }
+  nav a {
+    color: var(--dark);
+  }
+  nav a:hover,
+  a:focus {
+    color: var(--primary);
+  }
+  nav a:visited,
+  a:active {
+    text-decoration: none;
+    color: var(--dark);
+  }
+
+  /* Styling the menu button */
+  .menu-btn {
+    z-index: 3;
+    cursor: pointer;
+    transition: all ease-out;
+  }
+
+  /* Styling the hamburger lines */
+  .menu-btn .btn-line {
+    border-radius: 100px;
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background-color: var(--dark);
+    transition: all .2s ease-out;
+  }
+
+  /* Adding transform to the X */
+  .menu-btn.close {
+    transform: rotate(180deg) translate(0px, 6px);
+  }
+
+  /* Styling the three lines to make it an X */
+  .menu-btn.close .btn-line:nth-child(1) {
+    background-color: var(--dark);
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-btn.close .btn-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-btn.close .btn-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* LOGO STYLING */
+  .logo-span {
+    font-size: 30pt;
+    font-weight: 800;
+  }
+
+  #logo-K {
+    position: relative;
+    left: 4px;
+  }
+
+  #logo-B {
+    position: relative;
+    right: 4px;
+  }
+}
+
+/* BUTTON STYLING */
+
+button:focus {
+  outline: none;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+}
+/* Font selectors */
+.rubik {
+  font-family: "Rubik Mono One", sans-serif;
+  font-weight: 600;
+}
+
+.source-code-pro {
+  font-family: "Source Code Pro", monospace;
+}
+
+.txt-light {
+  color: var(--light) !important;
+}
+
+.txt-primary {
+  color: var(--primary) !important;
+}
+
+.txt-dark {
+  color: var(--dark) !important;
+}
+
+.txt-shadow {
+  text-shadow: 0rem 0rem 5px var(--primary-light);
+}
+
+/* Classes */
+
+.workTitle {
+  color: var(--light);
+  font-size: 16pt;
+}
+.workTitle:hover {
+  color: var(--light);
+  text-decoration: none;
+  cursor: none;
+}
+
+div.workCard {
+  max-width: 35rem;
+  margin-left: 10rem;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+  z-index: 100;
+}
+div.workCardSM {
+  margin: 2rem;
+  z-index: 100;
+}
+
+.card {
+  background-color: var(--grey);
+}
+
+input, textarea {
+  color: var(--light) !important;
+}
+
+textarea:focus, input:focus {
+  color: var(--light) !important;
+}
+
+.contact_input {
+  border-radius: 0;
+  background-color: var(--grey);
+  border-style: none;
+  resize: none;
+}
+.contact_input:focus {
+  outline-width: 0;
+  background-color: var(--grey);
+}
+
+/* Yellow bar thing */
+.yellow_bar {
+  display: block;
+  color: var(--secondary);
+  background: var(--secondary);
+  height: 5rem;
+  box-sizing: border-box;
+  position: relative;
+  transform: translate(5rem, 8rem);
+}
+.yellow_bar2 {
+  display: block;
+  color: var(--secondary);
+  background: var(--secondary);
+  height: 5rem;
+  box-sizing: border-box;
+  position: relative;
+  transform: rotate(45deg) translate(5rem, 14.5rem);
+}
+.yellow_bar3 {
+  display: block;
+  color: var(--secondary);
+  background: var(--secondary);
+  height: 5rem;
+  box-sizing: border-box;
+  position: relative;
+  transform: rotate(45deg) translate(-3rem, -5rem);
+}
+
+/* all ID's */
+
+/* hide, for dynamics */
+.hide {
+  display: none !important;
+}
+
+/*! Side scrolling stuff */
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+}
+.scrolling-wrapper.card {
+  display: inline-block;
+}
