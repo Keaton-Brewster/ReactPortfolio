@@ -1,19 +1,21 @@
 import ContactForm from '../../components/ContactForm';
+import Links from '../../components/Links';
+import { Grid, Row, Col, Divider } from 'rsuite';
 
 function Contact() {
     return (
-        <div className="body row d-none d-lg-flex">
-
-            <div name="contact_me-page" className="text-center col-8 mt-5 ml-5 source-code-pro txt-light">
-
-                <div className="clearfix">
+        <>
+            <h2>Send cat pics here (or questions, maybe comments. Let's chat)</h2>
+            <Divider />
+            <Grid fluid>
+                <Row>
+                    <Col xs={8} sm={6} lg={6} />
                     <ContactForm />
-                </div>
-
-                <aside id="socials" className="mt-5 bg-dark clearfix display-3 justify-content-around">
-                </aside>
-            </div>
-        </div>
+                    <Col xs={8} sm={6} lg={6} />
+                </Row>
+            </Grid>
+            <Links />
+        </>
     )
 }
 

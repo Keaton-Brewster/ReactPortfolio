@@ -1,15 +1,22 @@
+import { useRef, useState } from 'react';
+import { Button, ButtonToolbar, Col, Form, FormGroup, FormControl, ControlLabel, HelpBlock } from 'rsuite';
+import './index.css';
+
 function ContactForm() {
     return (
-        <form name="inquireLG" className="form-group inquire-form">
-            <label>Send cat pics here (or questions, maybe comments. Let's chat)</label>
-            <input autocomplete="off" name="inquireLG_subject" className="form-control contact_input" type="text" placeholder="Subject" />
-            <textarea autocomplete="off" name="inquireLG_text" rows="5" className="form-control contact_input" type="text"
-                placeholder="Your message here"></textarea>
-            <input autocomplete="off" id="inquireLG_email" className="form-control contact_input" type="email" name="email"
-                placeholder="Your email address" />
-            <button type="submit" className="btn bg-secondary form-control contact_input hvr-underline-reveal">s e n d</button>
-        </form>
-
+        <>
+            <Col xs={6} sm={12} lg={12}>
+                <form name="contactForm" className="">
+                    <label>Send cat pics here (or questions, maybe comments. Let's chat)</label>
+                    <input autoComplete="off" name="subject" className="form-control" type="text" placeholder="Subject" />
+                    <textarea autoComplete="off" name="message" rows="5" className="form-control" type="text"
+                        placeholder="Your message here"></textarea>
+                    <input autoComplete="off" id="email" className="form-control" type="email" name="email"
+                        placeholder="Your email address" />
+                    <button type="submit" className="">s e n d</button>
+                </form>
+            </Col>
+        </>
     )
 }
 
