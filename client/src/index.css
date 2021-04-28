@@ -1,28 +1,87 @@
+:root {
+    --primary: #214aff;
+    --primary-light: #4164ff;
+    --secondary: #e6cf09;
+    --grey: #404346;
+    --dark: #221d1b;
+    --light: #f6f6f4;
+}
+
 * {
     font-family: 'Montserrat', sans-serif;
 }
 
 /* redefining color classes */
 .bg-primary {
-  background-color: var(--primary) !important;
+    background-color: var(--primary) !important;
 }
+
 .bg-primary_light {
-  background-color: var(--primary_light) !important;
+    background-color: var(--primary_light) !important;
 }
+
 .bg-secondary {
-  background-color: var(--secondary) !important;
+    background-color: var(--secondary) !important;
 }
+
 .bg-dark {
-  background-color: var(--dark) !important;
+    background-color: var(--dark) !important;
 }
+
 .bg-light {
-  background-color: var(--light) !important;
+    background-color: var(--light) !important;
 }
+
 .bg-grey {
-  background-color: var(--grey) !important;
+    background-color: var(--grey) !important;
 }
 
 
 a .fa {
     color: var(--primary)
+}
+
+/*  custom classes */
+.text-center {
+    text-align: center;
+}
+
+.parent-center {
+    position: relative;
+    top: 15em;
+}
+
+.child-center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Input styling */
+input,
+textarea {
+    color: var(--light) !important;
+}
+
+textarea:focus,
+input:focus {
+    color: var(--light) !important;
+}
+
+.contactInput {
+    border-radius: 0;
+    background-color: var(--grey) !important;
+    border-style: none;
+    resize: none;
+    width: 35rem;
+}
+
+.contactInput:focus {
+    outline-width: 0;
+    background-color: var(--grey);
+}
+
+button.submit {
+    margin-top: 2rem;
 }
