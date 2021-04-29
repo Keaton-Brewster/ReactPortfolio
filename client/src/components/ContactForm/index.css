@@ -2,6 +2,7 @@ input {
     display: flex;
 }
 
-button {
+/* button {
     display: flex;
-}
+    width: 150% !important;
+} */

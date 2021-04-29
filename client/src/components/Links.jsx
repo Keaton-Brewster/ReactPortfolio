@@ -1,16 +1,16 @@
-import { Nav } from 'rsuite';
+import { Nav, Icon } from 'rsuite';
 
 function Links() {
     return (
         <>
             <Nav.Item href="https://www.linkedin.com/in/keatonbrewster/" className="hvr-pulse fa" target="blank">
-                <i className="fab fa-linkedin-in"></i>
+                <Icon icon='linkedin' size="2x" />
             </Nav.Item>
             <Nav.Item href="https://github.com/Keaton-Brewster" className="hvr-pulse fa" target="blank">
-                <i className="fab fa-github"></i>
+                <Icon icon='github' size="2x" />
             </Nav.Item>
             <Nav.Item href="https://twitter.com/KeatonBrewster" className="hvr-pulse fa" target="blank">
-                <i className="fab fa-twitter"></i>
+                <Icon icon="twitter" size="2x" />
             </Nav.Item>
         </>
     )
