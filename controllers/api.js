@@ -34,8 +34,4 @@ module.exports = (app) => {
             response.sendStatus(500)
         }
     })
-
-    app.get('/api/hello', (request, response) => {
-        response.sendStatus(200)
-    })
 }
