@@ -36,10 +36,12 @@
     background-color: var(--grey) !important;
 }
 
-
+/* Fontawesome stylings */
 a .fa {
+    font-size: large;
     color: var(--primary)
 }
+
 
 /*  custom classes */
 .text-center {
@@ -56,6 +58,11 @@ a .fa {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.justify-center {
+    position: relative;
+    margin: 0 auto;
 }
 
 /* Input styling */

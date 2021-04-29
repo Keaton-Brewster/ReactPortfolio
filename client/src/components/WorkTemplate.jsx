@@ -1,23 +1,19 @@
-function WorkTemplate({ work }) {
-    const { name, redirectToApp, redirectToGithub, descrtiption } = work;
+import { Panel } from 'rsuite';
+
+function WorkTemplate({ work, eventKey }) {
+    const { name, redirectToApp, redirectToGithub, description } = work;
     return (
         <>
-            <div class="card workCard text-center">
-                <h5>{name}</h5>
-                <div class="card-body d-flex flex-column">
-                    <div class="flex-row">
-                        <a class="workTitle" href="#"></a>
-            |
-            <a class="btn btn-primary" href={redirectToApp} target="blank">
-                            View Site
-            </a>
-            |
-            <a class="btn btn-primary" href={redirectToGithub} target="blank">
-                            <i class="fab fa-github"></i>
+            <h5>{description}</h5>
+            <div className="card-body d-flex ">
+                <div className="text-center">
+                    <a className="btn btn-primary" href={redirectToApp} target="blank">
+                        View Site
                         </a>
-                    </div>
                     <br />
-                    <p>{descrtiption}</p>
+                    <a className="btn btn-primary" href={redirectToGithub} target="blank">
+                        View Code <i className="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
         </>
