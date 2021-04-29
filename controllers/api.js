@@ -17,7 +17,6 @@ module.exports = (app) => {
     });
 
     app.post('/api/contact', (request, response) => {
-        console.log(request.body)
 
         // * just confirm that the account that is sending the mail is valid
         transport.verify((err, success) => {
@@ -28,7 +27,7 @@ module.exports = (app) => {
 
         try {
             request.body.from = atob(request.body.from);
-            transport.sendMail(request.body, (err, response) => {
+            transport.sendMail(request.body, (err, res) => {
                 if (err) {
                     response.sendStatus(400);
                 } else {
