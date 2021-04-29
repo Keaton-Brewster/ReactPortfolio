@@ -11,6 +11,11 @@ const transport = nodemailer.createTransport({
 });
 
 module.exports = (app) => {
+    // This is for heroku so that React Router works
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+    });
+
     app.post('/api/contact', (request, response) => {
         console.log(request.body)
 
