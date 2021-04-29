@@ -12,16 +12,18 @@ const transport = nodemailer.createTransport({
 
 module.exports = (app) => {
     app.post('/api/contact', (request, response) => {
+        console.log(request.body)
+
         // * just confirm that the account that is sending the mail is valid
         transport.verify((err, success) => {
             if (err) return console.log(err)
-            else console.log(success);
+            else console.log(`sucesss: ${success}`);
         });
 
 
         try {
             request.body.from = atob(request.body.from);
-            transport.sendMail(request.body, (err, res) => {
+            transport.sendMail(request.body, (err, response) => {
                 if (err) {
                     response.sendStatus(400);
                 } else {
@@ -29,7 +31,11 @@ module.exports = (app) => {
                 }
             })
         } catch {
-            res.sendStatus(500)
+            response.sendStatus(500)
         }
+    })
+
+    app.get('/api/hello', (request, response) => {
+        response.sendStatus(200)
     })
 }

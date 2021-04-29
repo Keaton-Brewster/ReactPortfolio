@@ -41,9 +41,10 @@ import './index.css';
 
 function ContactForm() {
     const [fields, setFields] = useState({
+        from: atob('dGhyb3dhd2F5a2VhdG9uZGV2QGdtYWlsLmNvbQ=='),
+        to: 'keatonbrewsterdev@gmail.com',
         subject: '',
         text: '',
-        from: ''
     })
 
     let subject = useRef();
@@ -52,14 +53,12 @@ function ContactForm() {
 
     function handleInputChange(event) {
         subject = subject.current.value;
-        text = text.current.value;
-        from = from.current.value;
+        text = `mesage: ${text.current.value} \n from: ${from.current.value}`;
 
         setFields({
             ...fields,
             subject,
             text,
-            from
         })
     }
 
@@ -71,9 +70,7 @@ function ContactForm() {
         event.preventDefault();
 
         if (typeof (fields.text) === 'string') {
-            axios.post('/api/contact', {
-                body: fields
-            })
+            axios.post('/api/contact', fields)
                 .then(() => {
                     thankYou();
                 })
