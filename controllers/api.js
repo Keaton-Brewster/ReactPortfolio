@@ -6,7 +6,7 @@ const atob = require('atob');
 const transport = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: atob(process.env.USER),
+        user: atob(process.env.MAILER),
         pass: atob(process.env.PASS)
     }
 });
