@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import Home from './Pages/Home'
 import Contact from './Pages/Contact'
 import Portfolio from './Pages/Portfolio';
+import About from './Pages/About';
 import 'rsuite/dist/styles/rsuite-dark.css';
 import './index.css'
 import './hover.css'
@@ -26,6 +27,7 @@ function App() {
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/portfolio" component={Portfolio} />
                 <Route exact path="/contact" component={Contact} />
+                <Route exact patch="/about" component={About} />
             </Switch>
         </Router>
     )

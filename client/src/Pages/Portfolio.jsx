@@ -1,7 +1,7 @@
+import React from 'react';
 import { Grid, Row, Col, PanelGroup, Panel } from 'rsuite';
 import WorkTemplate from '../components/WorkTemplate'
 import Works from '../utils/works';
-
 
 function Portfolio() {
     return (

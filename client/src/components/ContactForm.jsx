@@ -33,10 +33,9 @@ function ContactForm() {
                     setFormSuccess(true)
                     setModal({ show: true });
                 })
-                .catch(error => { 
+                .catch(error => {
                     setFormSuccess(false);
-                    setModal({ show: true});
-                    console.error(error) 
+                    setModal({ show: true });
                 });
         } else {
             alert('Please fill out all fields');
@@ -54,12 +53,14 @@ function ContactForm() {
                 <form onSubmit={submitForm} name="contactForm" className="">
                     <input onChange={handleInputChange} ref={subject} autoComplete="off" name="subject" className="contactInput" type="text" placeholder="Subject" />
                     <textarea onChange={handleInputChange} ref={text} autoComplete="off" name="message" rows="5" className="contactInput" type="text"
-                        placeholder="Your message here"></textarea>
+                        placeholder="Your message here" />
                     <input onChange={handleInputChange} ref={from} autoComplete="off" id="email" className="contactInput" type="email" name="email"
                         placeholder="Your email address" required />
                     <Button block type="submit" className="submit">send <Icon icon="arrow-circle-right" /></Button>
                 </form>
             </Col>
+
+            <Button onClick={() => {setModal({show: true})}} />
 
             {/* This is just the modal for the form submit */}
             <div className="modal-container">

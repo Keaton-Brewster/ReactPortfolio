@@ -81,7 +81,7 @@ input:focus {
     background-color: var(--grey) !important;
     border-style: none;
     resize: none;
-    width: 35rem;
+    width: 35em;
 }
 
 .contactInput:focus {
