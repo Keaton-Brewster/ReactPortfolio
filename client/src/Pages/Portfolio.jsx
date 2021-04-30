@@ -12,14 +12,22 @@ function Portfolio() {
         <Container>
             <Sidebar>
                 <Panel className="mt-1">
-                    <img id="workImg" src={store.workImg} alt="Screeenshot of displayed portfolio work"/>
+                    <img id="workImg" src={store.workImg} alt="Screeenshot of displayed portfolio work" />
                 </Panel>
             </Sidebar>
             <Content>
-                <PanelGroup accordion defaultActiveKey={0}>
+                <PanelGroup
+                    accordion
+                    defaultActiveKey={0}
+                    // className="accordian-shade"
+                    >
                     {Works.map((work, i) => {
                         return (
-                            <Panel onClick={() => dispatch({type: "change work image", payload: work.img})} header={<h3>{work.name}</h3>} eventKey={i} key={i}>
+                            <Panel
+                                onClick={() => dispatch({ type: "change work image", payload: work.img })}
+                                header={<h3>{work.name}</h3>}
+                                eventKey={i}
+                                key={i}>
                                 <WorkTemplate work={work} />
                             </Panel>
                         )

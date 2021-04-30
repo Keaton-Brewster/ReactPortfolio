@@ -8,8 +8,7 @@ import Contact from './Pages/Contact'
 import Portfolio from './Pages/Portfolio';
 import About from './Pages/About';
 import 'rsuite/dist/styles/rsuite-dark.css';
-import './index.css'
-import './hover.css'
+import './css/index.css'
 
 function App() {
     useEffect(() => {

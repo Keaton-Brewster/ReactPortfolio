@@ -51,7 +51,7 @@ function ContactForm() {
                     <Content>
                         <FlexboxGrid justify="center">
                             <FlexboxGrid.Item colspan={12}>
-                                <Panel header={<h3>Please reach out to me!</h3>} bordered>
+                                <Panel className="bg-dark" header={<h3>Please reach out! I want to hear from you!</h3>} bordered>
                                     <form onSubmit={submitForm} id="contactForm" className="">
                                         <input onChange={handleInputChange} ref={subject} autoComplete="off" name="subject" className="contactInput" type="text" placeholder="Subject" />
                                         <textarea onChange={handleInputChange} ref={text} autoComplete="off" name="message" rows="5" className="contactInput" type="text"
