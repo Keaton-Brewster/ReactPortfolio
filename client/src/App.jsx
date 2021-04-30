@@ -7,6 +7,7 @@ import Home from './Pages/Home'
 import Contact from './Pages/Contact'
 import Portfolio from './Pages/Portfolio';
 import About from './Pages/About';
+import Resume from './Pages/Resume'
 import 'rsuite/dist/styles/rsuite-dark.css';
 import './css/index.css'
 
@@ -28,6 +29,7 @@ function App() {
                     <Route exact path="/home" component={Home} />
                     <Route exact path="/portfolio" component={Portfolio} />
                     <Route exact path="/contact" component={Contact} />
+                    <Route exact path="/resume" component={Resume} />
                     <Route exact patch="/about" component={About} />
                 </Switch>
             </GlobalState>

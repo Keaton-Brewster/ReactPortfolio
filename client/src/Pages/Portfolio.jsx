@@ -10,12 +10,12 @@ function Portfolio() {
     return (
 
         <Container>
-            <Sidebar>
+            <Sidebar className="bg-dark">
                 <Panel className="mt-1">
                     <img id="workImg" src={store.workImg} alt="Screeenshot of displayed portfolio work" />
                 </Panel>
             </Sidebar>
-            <Content>
+            <Content className="theme-gradient">
                 <PanelGroup
                     accordion
                     defaultActiveKey={0}>

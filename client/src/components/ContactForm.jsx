@@ -51,13 +51,45 @@ function ContactForm() {
                     <Content>
                         <FlexboxGrid justify="center">
                             <FlexboxGrid.Item colspan={12}>
-                                <Panel className="bg-dark" header={<h3>Please reach out! I want to hear from you!</h3>} bordered>
-                                    <form onSubmit={submitForm} id="contactForm" className="">
-                                        <input onChange={handleInputChange} ref={subject} autoComplete="off" name="subject" className="contactInput" type="text" placeholder="Subject" />
-                                        <textarea onChange={handleInputChange} ref={text} autoComplete="off" name="message" rows="5" className="contactInput" type="text"
-                                            placeholder="Your message here" />
-                                        <input onChange={handleInputChange} ref={from} autoComplete="off" id="email" className="contactInput" type="email" name="email"
-                                            placeholder="Your email address" required />
+                                <Panel
+                                    className="bg-dark"
+                                    header={<h3>Please reach out, I want to hear from you!</h3>}
+                                    bordered>
+                                    <form
+                                        onSubmit={submitForm}
+                                        id="contactForm"
+                                        className="">
+                                        <input
+                                            onChange={handleInputChange}
+                                            ref={subject}
+                                            autoComplete="off"
+                                            name="subject"
+                                            className="contactInput"
+                                            type="text"
+                                            placeholder="Subject (optional)"
+                                        />
+                                        <textarea
+                                            onChange={handleInputChange}
+                                            ref={text}
+                                            autoComplete="off"
+                                            name="message"
+                                            rows="5"
+                                            className="contactInput"
+                                            type="text"
+                                            placeholder="Your message here"
+                                            required
+                                        />
+                                        <input
+                                            onChange={handleInputChange}
+                                            ref={from}
+                                            autoComplete="off"
+                                            id="email"
+                                            className="contactInput"
+                                            type="email"
+                                            name="email"
+                                            placeholder="Your email address"
+                                            required
+                                        />
                                         <ButtonToolbar>
 
                                             <Button type="submit" className="submit">send <Icon icon="arrow-circle-right" /></Button>

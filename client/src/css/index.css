@@ -16,6 +16,11 @@ body {
     background: linear-gradient(90deg, rgba(68, 74, 91, 1) 0%, rgba(147, 180, 148, 1) 29%, rgba(192, 224, 195, 1) 50%, rgba(153, 187, 159, 1) 71%, rgba(68, 74, 91, 1) 100%);
 }
 
+.theme-gradient {
+    background: rgb(68, 74, 91);
+    background: linear-gradient(90deg, rgba(68, 74, 91, 1) 0%, rgba(147, 180, 148, 1) 29%, rgba(192, 224, 195, 1) 50%, rgba(153, 187, 159, 1) 71%, rgba(68, 74, 91, 1) 100%);
+}
+
 *,
 *:before,
 *:after {
