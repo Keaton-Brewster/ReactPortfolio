@@ -11,6 +11,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
 /* redefining color classes */
 .bg-primary {
     background-color: var(--primary) !important;
@@ -48,6 +52,13 @@ a .fa {
     text-align: center;
 }
 
+.container {
+    width: 50vw;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .parent-center {
     position: relative;
     top: 15em;
@@ -81,7 +92,7 @@ input:focus {
     background-color: var(--grey) !important;
     border-style: none;
     resize: none;
-    width: 35em;
+    min-width: 50vw;
 }
 
 .contactInput:focus {
@@ -91,4 +102,9 @@ input:focus {
 
 button.submit {
     margin-top: 2rem;
+}
+
+/* margin stuff */
+.mt-3 {
+    margin-top: 10vh;
 }

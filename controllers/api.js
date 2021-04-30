@@ -13,16 +13,19 @@ const transport = nodemailer.createTransport({
 
 module.exports = (app) => {
     // This is for heroku so that React Router works
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+    app.get('*', (request, response) => {
+        response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
     });
+
+    // app.get('/api/resume', (request, response) => {
+    //     response.sendFile(path.resolve(__dirname, '../client/public', 'Resume.pdf'))
+    // })
 
     app.post('/api/contact', (request, response) => {
 
         // * just confirm that the account that is sending the mail is valid
         transport.verify((err, success) => {
-            if (err) return console.log(err)
-            else console.log(`sucesss: ${success}`);
+            if (err) throw new Error(error);
         });
 
 

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import GlobalState from './utils/GlobalState';
 import WebFont from 'webfontloader';
 import NavBar from './components/NavBar';
 import Home from './Pages/Home'
@@ -20,15 +21,17 @@ function App() {
     }, [])
 
     return (
-        <Router>    
-            <NavBar />
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/home" component={Home} />
-                <Route exact path="/portfolio" component={Portfolio} />
-                <Route exact path="/contact" component={Contact} />
-                <Route exact patch="/about" component={About} />
-            </Switch>
+        <Router>
+            <GlobalState>
+                <NavBar />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/home" component={Home} />
+                    <Route exact path="/portfolio" component={Portfolio} />
+                    <Route exact path="/contact" component={Contact} />
+                    <Route exact patch="/about" component={About} />
+                </Switch>
+            </GlobalState>
         </Router>
     )
 }

@@ -18,23 +18,19 @@ function About() {
     // }
 
     return (
-        <div className="body row d-none d-lg-flex">
-
-
-            <div name="about_me-page" className="col-9 mt-5 source-code-pro txt-light text-center">
-                <h2 className="txt-shadow display-4">
-                    A little about myself:
-        </h2>
+        <div class="container">
+            <div className="text-center">
+                <h2>A little about myself:</h2>
                 <br />
                 <p className="text-center">
                     KEATON BREWSTER
-            <br />
-            Full stack web developer
+                <br />
+                Full stack web developer
                 <br />
                 Inspired by new challenges
-                    <br />
-                    Professionally driven
-        </p>
+                <br />
+                Professionally driven
+                </p>
                 <br />
                 <br />
                 <p className="text-center">
