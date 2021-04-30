@@ -12,8 +12,8 @@
 }
 
 body {
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(174, 214, 176, 1) 20%, rgba(68, 74, 91, 1) 100%);
+    background: rgb(68, 74, 91);
+    background: linear-gradient(90deg, rgba(68, 74, 91, 1) 0%, rgba(147, 180, 148, 1) 29%, rgba(192, 224, 195, 1) 50%, rgba(153, 187, 159, 1) 71%, rgba(68, 74, 91, 1) 100%);
 }
 
 *,
@@ -55,10 +55,6 @@ a .fa {
 
 
 /*  custom classes */
-.text-center {
-    text-align: center;
-}
-
 .container {
     width: 50vw;
     position: relative;
@@ -195,6 +191,14 @@ button.submit {
 
 .font-bolder {
     font-weight: bolder;
+}
+
+.text-dark {
+    color: var(--dark)
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* img stuff */
