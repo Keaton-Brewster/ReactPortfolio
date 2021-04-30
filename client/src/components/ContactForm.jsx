@@ -4,7 +4,8 @@ import { Container, Panel, FlexboxGrid, Content, Button, Icon, ButtonToolbar } f
 import axios from 'axios';
 
 function ContactForm() {
-
+    // not using store in this component but I have to declare it to get to the dispatch
+    //eslint-disable-next-line 
     const [store, dispatch] = useContext(Context);
     const [fields, setFields] = useState({
         from: atob('dGhyb3dhd2F5a2VhdG9uZGV2QGdtYWlsLmNvbQ=='),
