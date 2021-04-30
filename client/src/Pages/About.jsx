@@ -4,33 +4,33 @@ import axios from 'axios';
 
 function About() {
 
-    useEffect(() => {
-        downloadResume()
-    }, [])
+    // useEffect(() => {
+    //     downloadResume()
+    // }, [])
 
-    //* Have to figure out whole different way to download my resume now
-    function downloadResume() {
-        axios({
-            url: '/api/resume',
-            method: "GET",
-            responseType: 'blob'
-        }).then(file => {
-            console.log(file);
-            const blobURL = file.config.url;
-            const link = document.createElement('a');
+    // //* Have to figure out whole different way to download my resume now
+    // function downloadResume() {
+    //     axios({
+    //         url: '/api/resume',
+    //         method: "GET",
+    //         responseType: 'blob'
+    //     }).then(file => {
+    //         console.log(file);
+    //         const blobURL = file.config.url;
+    //         const link = document.createElement('a');
 
-            link.href = blobURL;
-            link.download = 'Resume.pdf'
+    //         link.href = blobURL;
+    //         link.download = 'Resume.pdf'
             
-            document.getElementById('resume-button').appendChild(link);
+    //         document.getElementById('resume-button').appendChild(link);
 
-        }).catch(error => {
-            throw new Error(error);
-        })
-    }
+    //     }).catch(error => {
+    //         throw new Error(error);
+    //     })
+    // }
 
     return (
-        <div className="container">
+        <div className="container mt-2">
             <div className="text-center">
                 <h2>A little about myself:</h2>
                 <br />

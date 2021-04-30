@@ -19,7 +19,7 @@ module.exports = (app) => {
 
     app.get('/api/resume', (request, response) => {
         response.setHeader('Content-disposition', 'attachment; filename=Resume.pdf');
-        response.download(path.resolve(__dirname, '../server/assets', 'Resume.pdf'))
+        response.sendFile(path.resolve(__dirname, '../server/assets', 'Resume.pdf'))
     })
 
     app.post('/api/contact', (request, response) => {
