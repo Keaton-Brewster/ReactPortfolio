@@ -18,9 +18,7 @@ function Portfolio() {
             <Content>
                 <PanelGroup
                     accordion
-                    defaultActiveKey={0}
-                    // className="accordian-shade"
-                    >
+                    defaultActiveKey={0}>
                     {Works.map((work, i) => {
                         return (
                             <Panel
