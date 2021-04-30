@@ -29,7 +29,7 @@ function reducer(state, action) {
         case 'change work image':
             return {
                 ...state,
-                workImg: `%PUBLIC_URL%/${action.payload}`
+                workImg: `${process.env.PUBLIC_URL}/imgs/${action.payload}`
             }
         default:
             throw new Error('reducer error in global state');
@@ -41,7 +41,7 @@ const initialState = {
         show: false
     },
     formSuccess: false,
-    workImg: '%PUBLIC_URL%/imgs/Routinify.png'
+    workImg: `${process.env.PUBLIC_URL}/imgs/Routinify.png`
 }
 
 function GlobalState({ children }) {

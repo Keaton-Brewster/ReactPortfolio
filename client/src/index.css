@@ -156,3 +156,8 @@ button.submit {
 .font-bolder {
     font-weight: bolder;
 }
+
+/* img stuff */
+img#workImg {
+    max-width: 34ex;
+}

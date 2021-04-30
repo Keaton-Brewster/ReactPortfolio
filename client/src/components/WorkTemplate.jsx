@@ -1,12 +1,8 @@
-import { useContext } from 'react';
-import { Context } from '../utils/GlobalState';
 import { ButtonToolbar, Button, Icon } from 'rsuite'
 
 function WorkTemplate({ work }) {
-    const [store, dispatch] = useContext(Context);
-
     const { redirectToApp, redirectToGithub, description } = work;
-    
+
     return (
         <>
             <h5>{description}</h5>
