@@ -1,24 +1,36 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { Button } from 'rsuite';
 import axios from 'axios';
 
 function About() {
 
+    useEffect(() => {
+        downloadResume()
+    }, [])
+
     //* Have to figure out whole different way to download my resume now
-    // function downloadResume() {
-    //     axios({
-    //         url: '/api/resume',
-    //         method: "GET",
-    //         responseType: 'blob'
-    //     }).then(file => {
-    //         // FileDownload(file.data, 'Resumse.pdf')
-    //     }).catch(error => {
-    //         throw new Error(error);
-    //     })
-    // }
+    function downloadResume() {
+        axios({
+            url: '/api/resume',
+            method: "GET",
+            responseType: 'blob'
+        }).then(file => {
+            console.log(file);
+            const blobURL = file.config.url;
+            const link = document.createElement('a');
+
+            link.href = blobURL;
+            link.download = 'Resume.pdf'
+            
+            document.getElementById('resume-button').appendChild(link);
+
+        }).catch(error => {
+            throw new Error(error);
+        })
+    }
 
     return (
-        <div class="container">
+        <div className="container">
             <div className="text-center">
                 <h2>A little about myself:</h2>
                 <br />
@@ -44,7 +56,7 @@ function About() {
                     exploring new music.
         </p>
                 <br />
-                <Button>Download my resume</Button>
+                <Button id="resume-button">Download my resume</Button>
 
             </div>
         </div>
