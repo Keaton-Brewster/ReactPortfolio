@@ -1,7 +1,16 @@
 version: 2.1
+
 orbs:
-  node: circleci/node@3.0.0
-workflows:
-  node-tests:
-    jobs:
-      - node/test
+  heroku: circleci/heroku@0.0.10
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.16.3
+    working_directory: ~/repo
+    steps:
+      - checkout
+      # install dependencies
+      - run:
+          name: Install Dependencies
+          command: npm install
