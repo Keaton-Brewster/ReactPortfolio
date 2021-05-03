@@ -79,9 +79,14 @@ a .fa {
     background: linear-gradient(90deg, rgba(199, 199, 199, 0) 0%, rgba(0, 0, 0, 1) 100%, rgba(68, 74, 91, 1) 100%);
 }
 
+.box-shadow {
+    box-shadow: -1px 1px 7px var(--secondary);
+}
+
 /* Input styling */
 input,
 textarea {
+    padding: .5em;
     color: var(--light) !important;
 }
 
@@ -135,6 +140,11 @@ input:focus {
 
 button.submit {
     margin-top: 2rem;
+}
+
+a:hover {
+    background-color: var(--secondary) !important;
+    color: var(--dark) !important;
 }
 
 /* margin stuff */

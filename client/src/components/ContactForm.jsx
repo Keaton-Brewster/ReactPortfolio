@@ -52,7 +52,7 @@ function ContactForm() {
                         <FlexboxGrid justify="center">
                             <FlexboxGrid.Item colspan={12}>
                                 <Panel
-                                    className="bg-dark"
+                                    className="box-shadow"
                                     header={<h3>Please reach out, I want to hear from you!</h3>}
                                     bordered>
                                     <form
