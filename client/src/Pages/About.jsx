@@ -1,7 +1,7 @@
 import { Button } from 'rsuite';
 
 function About() {
-    function downloadResume() {
+    function openResume() {
         const link = document.createElement('a');
         link.href = `${process.env.PUBLIC_URL}/Resume.pdf`
         link.target = 'blank'
@@ -10,7 +10,7 @@ function About() {
 
     return (
         <div className="container mt-2">
-            <div className="text-center text-dark">
+            <div className="text-center">
                 <h2>A little about myself:</h2>
                 <br />
                 <p className="text-center">
@@ -36,7 +36,7 @@ function About() {
         </p>
                 <br />
                 <Button 
-                onClick={downloadResume}
+                onClick={openResume}
                 className="mt-2">My resume</Button>
 
             </div>

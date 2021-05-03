@@ -15,7 +15,7 @@ function App() {
     useEffect(() => {
         WebFont.load({
             google: {
-                families: ['Montserrat']
+                families: ['Montserrat', 'Source Code Pro']
             }
         })
     }, [])

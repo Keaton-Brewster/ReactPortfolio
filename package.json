@@ -21,8 +21,7 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build",
-    "deploy": "git push heroku master"
+    "heroku-postbuild": "npm run build"
   },
   "engines": {
     "node": "v14.16.1",
