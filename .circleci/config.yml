@@ -1,0 +1,40 @@
+version: 2.1
+
+orbs:
+  heroku: circleci/heroku@0.0.10
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.16.3
+    working_directory: ~/repo
+    steps:
+      - checkout
+      # install dependencies
+      - run:
+          name: Install Dependencies
+          command: npm install
+          # need to set up lint to be included in our CI/CD
+      # - run: 
+      #     name: Lint Code
+      #     command: npm run lint
+      - run: 
+          name: Test Build
+          command: cd client && npm run build
+      # ignoring tests for now
+      # - run:
+      #     name: Run tests
+      #     command: npm run test
+
+workflows:
+  heroku_deploy:
+    jobs:
+      - build
+      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+          app-name: $HEROKU_PRODUCTION_APP_NAME
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+              
