@@ -8,6 +8,7 @@ import Contact from './Pages/Contact'
 import Portfolio from './Pages/Portfolio';
 import About from './Pages/About';
 import Resume from './Pages/Resume'
+import ParticlesBG from './components/ParticleBackground';
 import 'rsuite/dist/styles/rsuite-dark.css';
 import './css/index.css'
 
@@ -32,6 +33,7 @@ function App() {
                     <Route exact path="/resume" component={Resume} />
                     <Route exact patch="/about" component={About} />
                 </Switch>
+                <ParticlesBG />
             </GlobalState>
         </Router>
     )
