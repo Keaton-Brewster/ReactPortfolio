@@ -74,9 +74,12 @@ a .fa {
     margin: 0 auto;
 }
 
-.accordian-shade {
-    background: rgb(199, 199, 199);
-    background: linear-gradient(90deg, rgba(199, 199, 199, 0) 0%, rgba(0, 0, 0, 1) 100%, rgba(68, 74, 91, 1) 100%);
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
 }
 
 /* Input styling */
@@ -206,4 +209,6 @@ a:hover {
 img#workImg {
     max-width: 34ex;
     border-radius: 15px;
+    position: relative;
+    bottom: 4rem;
 }
