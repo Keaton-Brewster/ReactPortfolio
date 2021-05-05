@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Context } from "../utils/GlobalState";
-import { PanelGroup, Panel, Container, Sidebar, Content } from "rsuite";
+import { PanelGroup, Panel, Container, Content } from "rsuite";
 import WorkTemplate from "../components/WorkTemplate";
 import Works from "../utils/works";
 
