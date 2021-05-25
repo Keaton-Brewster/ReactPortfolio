@@ -1,0 +1,223 @@
+:root {
+    --primary: #214aff;
+    --primary-light: #4164ff;
+    --secondary: #e6cf09;
+    --grey: #404346;
+    --dark: #221d1b;
+    --light: #f6f6f4;
+    margin-bottom: 10rem;
+}
+
+* {
+    font-family: 'Source Code Pro', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* redefining color classes */
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.bg-primary_light {
+    background-color: var(--primary_light) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+
+.bg-dark {
+    background-color: var(--dark) !important;
+}
+
+.bg-light {
+    background-color: var(--light) !important;
+}
+
+.bg-grey {
+    background-color: var(--grey) !important;
+}
+
+/* Fontawesome stylings */
+a .fa {
+    font-size: large;
+    color: var(--primary)
+}
+
+
+/*  custom classes */
+.container {
+    width: 50vw;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.parent-center {
+    position: relative;
+    top: 15em;
+}
+
+.child-center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.justify-center {
+    position: relative;
+    margin: 0 auto;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+/* Styling for the individual portfolio works, just the way I have to do it. */
+
+.flex-grid {
+    margin: 1rem;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+}
+
+/*  Work card images */
+img#workImg {
+    max-width: 40ex;
+    border-radius: 5px !important;
+    position: relative;
+    top: .5rem;
+}
+
+/* Input styling */
+input,
+textarea {
+    padding: .5em;
+    color: var(--light) !important;
+}
+
+textarea:focus,
+input:focus {
+    color: var(--light) !important;
+}
+
+@media screen and (min-width: 991px) {
+    .contactInput {
+        border-radius: 0;
+        background-color: var(--grey) !important;
+        border-style: none;
+        resize: none;
+        min-width: 45vw;
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .contactInput {
+        border-radius: 0;
+        background-color: var(--grey) !important;
+        border-style: none;
+        resize: none;
+        min-width: 43vw;
+        max-width: 80ex;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contactInput {
+        border-radius: 0;
+        background-color: var(--grey) !important;
+        border-style: none;
+        resize: none;
+        min-width: 42vw;
+    }
+}
+
+.contactInput {
+    border-radius: 0;
+    background-color: var(--grey) !important;
+    border-style: none;
+    resize: none;
+}
+
+.contactInput:focus {
+    outline-width: 0;
+    background-color: var(--grey);
+}
+
+button.submit {
+    margin-top: 2rem;
+}
+
+a:hover {
+    background-color: var(--secondary) !important;
+    color: var(--dark) !important;
+}
+
+/* margin stuff */
+.m-1 {
+    margin: 1em;
+}
+
+.m-2 {
+    margin: 2em;
+}
+
+.m-3 {
+    margin: 3em;
+}
+
+.m-4 {
+    margin: 4em;
+}
+
+.m-5 {
+    margin: 5em;
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+
+.mt-2 {
+    margin-top: 2em;
+}
+
+.mt-3 {
+    margin-top: 3em;
+}
+
+.mt-4 {
+    margin-top: 4em;
+}
+
+.mt-5 {
+    margin-top: 5em;
+}
+
+/* Font stuff */
+
+.font-bold {
+    font-weight: bold;
+}
+
+.font-bolder {
+    font-weight: bolder;
+}
+
+.text-dark {
+    color: var(--dark)
+}
+
+.text-center {
+    text-align: center;
+}

@@ -1,39 +1,68 @@
 import { useContext } from "react";
 import { Context } from "../utils/GlobalState";
-import { PanelGroup, Panel, Container, Content } from "rsuite";
+import {
+  FlexboxGrid,
+  PanelGroup,
+  Panel,
+  Container,
+  Content,
+  ButtonToolbar,
+  Button,
+  Icon,
+  Col,
+} from "rsuite";
 import WorkTemplate from "../components/WorkTemplate";
 import Works from "../utils/works";
+const { Item } = FlexboxGrid;
 
 function Portfolio() {
   const [store, dispatch] = useContext(Context);
 
+  console.log(Works);
+
   return (
-    <Container>
-      <Content>
-        <PanelGroup accordion defaultActiveKey={0}>
-          {Works.map((work, i) => {
-            return (
-              <Panel
-                onClick={() =>
-                  dispatch({ type: "change work image", payload: work.img })
-                }
-                header={<h3>{work.name}</h3>}
-                eventKey={i}
-                key={i}
-              >
+    <>
+      {Works.map((work, i) => {
+        return (
+          <>
+            <h1 className="text-center">{work.title}</h1>
+            <FlexboxGrid justify="center" className="flex-grid">
+              <Item componentClass={Col} colspan={18} lg={16} md={18} sm={15}>
+                <>
+                  <h5>{work.description}</h5>
+                  <div className="text-center">
+                    <ButtonToolbar className="mt-1">
+                      <Button
+                        className="btn btn-primary"
+                        href={work.redirectToApp}
+                        target="blank"
+                      >
+                        View Site <Icon icon="globe" />
+                      </Button>
+                      <Button
+                        className="btn btn-primary"
+                        href={work.redirectToGithub}
+                        target="blank"
+                      >
+                        View Code <Icon icon="github" />
+                      </Button>
+                    </ButtonToolbar>
+                  </div>
+                </>
+              </Item>
+              <Item componentClass={Col} colspan={6} lg={6} md={6} sm={9}>
                 <img
                   id="workImg"
-                  src={store.workImg}
+                  src={`${process.env.PUBLIC_URL}/imgs/${work.img}`}
                   alt="Screeenshot of displayed portfolio work"
-                  className="float-right"
+                  className=""
                 />
-                <WorkTemplate work={work} />
-              </Panel>
-            );
-          })}
-        </PanelGroup>
-      </Content>
-    </Container>
+              </Item>
+            </FlexboxGrid>
+          </>
+        );
+      })}
+    </>
   );
 }
 
