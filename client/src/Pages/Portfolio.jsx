@@ -5,12 +5,7 @@ function Portfolio() {
   return (
     <>
       {Works.map((work, i) => {
-        return (
-          <>
-            <h1 className="text-center">{work.title}</h1>
-            <WorkTemplate work={work} />;
-          </>
-        );
+        return <WorkTemplate key={i} work={work} />;
       })}
     </>
   );

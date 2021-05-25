@@ -9,10 +9,8 @@ import {
   ButtonToolbar,
   FormGroup,
   ControlLabel,
-  FormControl,
   Form,
   HelpBlock,
-  Schema,
 } from "rsuite";
 import axios from "axios";
 import Toast from "../utils/toast";
@@ -38,108 +36,72 @@ function ContactForm() {
       subject: subject.current.value,
       text: `mesage: ${text.current.value} \n from: ${from.current.value}`,
     });
-
-    console.log(fields);
   }
 
   function submitForm() {
-    if (typeof fields.text === "string") {
+    if (fields.text !== "") {
+      dispatch({ type: "START_LODAING" });
+      dispatch({ type: "SHOW_MODAL" });
       axios
         .post("/api/contact", fields)
         .then(() => {
-          dispatch({ type: "form succeeded" });
-          dispatch({ type: "show modal" });
+          dispatch({ type: "FINISHED_LOADING" });
+          dispatch({ type: "FORM_SUCCESS" });
         })
         .catch(() => {
-          dispatch({ type: "form failed" });
-          dispatch({ type: "show modal" });
+          dispatch({ type: "FORM_FAILURE" });
         });
     } else {
-      alert("Please fill out all fields");
+      Toast("error", "Please fill out all fields", 2000);
       return;
     }
   }
 
   return (
-    <>
-      <Item className="mt-3" componentClass={Col} colspan={24} md={16} sm={24}>
-        <Panel
-          header={<h3>Please reach out, I want to hear from you!</h3>}
-          bordered
-        >
-          {/* <form onSubmit={submitForm} id="contactForm" className=""> */}
-          <Form fluid={true} onSubmit={submitForm} id="contact-form">
-            <FormGroup>
-              <ControlLabel>Subject</ControlLabel>
-              <input type="text" ref={subject} onChange={handleInputChange} />
-            </FormGroup>
-            <FormGroup>
-              <ControlLabel>Message</ControlLabel>
-              <textarea
-                ref={text}
-                rows={5}
-                componentClass="textarea"
-                onChange={handleInputChange}
-              />
-            </FormGroup>
-            <FormGroup>
-              <ControlLabel>Email</ControlLabel>
-              <input
-                required
-                ref={from}
-                onChange={handleInputChange}
-                type="email"
-              />
-              <HelpBlock>Required</HelpBlock>
-            </FormGroup>
-            <FormGroup>
-              <ButtonToolbar>
-                <Button type="submit" className="submit">
-                  send <Icon icon="arrow-circle-right" />
-                </Button>
-              </ButtonToolbar>
-            </FormGroup>
-          </Form>
-          {/* <input
-              onChange={handleInputChange}
-              ref={subject}
-              autoComplete="off"
-              name="subject"
-              className="contactInput"
-              type="text"
-              placeholder="Subject (optional)"
-            />
+    <FlexboxGrid fluid justify="center" className="contact-form">
+      <Item
+        className="mt-3"
+        componentClass={Col}
+        colspan={16}
+        md={12}
+        sm={20}
+        xs={22}
+      >
+        <h3>Please reach out, I want to hear from you!</h3>
+        <Form fluid={true} onSubmit={submitForm}>
+          <FormGroup>
+            <ControlLabel>Subject</ControlLabel>
+            <input type="text" ref={subject} onChange={handleInputChange} />
+          </FormGroup>
+          <FormGroup>
+            <ControlLabel>Message</ControlLabel>
             <textarea
-              onChange={handleInputChange}
               ref={text}
-              autoComplete="off"
-              name="message"
-              rows="5"
-              className="contactInput"
-              type="text"
-              placeholder="Your message here"
-              required
-            />
-            <input
+              rows={5}
+              componentClass="textarea"
               onChange={handleInputChange}
-              ref={from}
-              autoComplete="off"
-              id="email"
-              className="contactInput"
-              type="email"
-              name="email"
-              placeholder="Your email address"
-              required
             />
+          </FormGroup>
+          <FormGroup>
+            <ControlLabel>Email</ControlLabel>
+            <input
+              required
+              ref={from}
+              onChange={handleInputChange}
+              type="email"
+            />
+            <HelpBlock>Required</HelpBlock>
+          </FormGroup>
+          <FormGroup>
             <ButtonToolbar>
               <Button type="submit" className="submit">
                 send <Icon icon="arrow-circle-right" />
               </Button>
-            </ButtonToolbar> */}
-          {/* </form> */}
-        </Panel>
+            </ButtonToolbar>
+          </FormGroup>
+        </Form>
       </Item>
-    </>
+    </FlexboxGrid>
   );
 }
 

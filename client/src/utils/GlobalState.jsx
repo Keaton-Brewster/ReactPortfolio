@@ -1,31 +1,35 @@
 import { createContext, useReducer } from "react";
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "show modal":
+function reducer(state, { type }) {
+  switch (type) {
+    case "SHOW_MODAL":
       return {
         ...state,
         modal: {
           show: true,
         },
       };
-    case "hide modal":
+    case "HIDE_MODAL":
       return {
-        ...state,
         modal: {
+          ...state,
           show: false,
         },
       };
-    case "form succeeded":
+    case "FORM_SUCCESS":
       return {
         ...state,
         formSuccess: true,
       };
-    case "form failed":
+    case "FORM_FAILURE":
       return {
         ...state,
         formSuccess: false,
       };
+    case "START_LOADING":
+      return { ...state, loading: true };
+    case "FINISHED_LOADING":
+      return { ...state, loading: false };
     default:
       throw new Error("reducer error in global state");
   }
@@ -36,6 +40,7 @@ const initialState = {
     show: false,
   },
   formSuccess: false,
+  loading: true,
 };
 
 function GlobalState({ children }) {

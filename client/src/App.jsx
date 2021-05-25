@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Container } from "rsuite";
 import GlobalState from "./utils/GlobalState";
 import WebFont from "webfontloader";
@@ -55,15 +54,13 @@ function App() {
   }, [width]);
 
   return (
-    <Router>
-      <GlobalState>
-        <Container>
-          <NavBar setThisPage={setThisPage} />
-          {renderPage()}
-          <Footer />
-        </Container>
-      </GlobalState>
-    </Router>
+    <GlobalState>
+      <Container>
+        <NavBar setThisPage={setThisPage} />
+        {renderPage()}
+        <Footer />
+      </Container>
+    </GlobalState>
   );
 }
 

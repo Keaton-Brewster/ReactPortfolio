@@ -65,8 +65,7 @@ const devlr = new Work(
   "devlr",
   "https://devlrapp.herokuapp.com/",
   "https://github.com/brandyquinlan/devlr/",
-  `Create a customized profile to display your development background, pinned projects and status updates to share with other developers worldwide. 
-  devlr is a social media/portfolio/networking site designed just for developers. There is nothing like it on the open market, 
+  `devlr is a social media/portfolio/networking site designed just for developers. There is nothing like it on the open market, 
   the nearest competitor would be Stack Overflow or GitHub for code sharing or Reddit for social interaction.
   Our project combines the benefits of GitHub for sharing your code, and Twitter and other social media for sharing your life.`,
   "devlr.png"
