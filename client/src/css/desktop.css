@@ -102,13 +102,17 @@ img#workImg {
 /* Input styling */
 input,
 textarea {
+    width: 100%;
     padding: .5em;
-    color: var(--light) !important;
+    background-color: var(--dark) !important;
+    border-radius: 4px;
+    border: 1px solid var(--grey) !important;
 }
 
 textarea:focus,
 input:focus {
-    color: var(--light) !important;
+    color: var(--dark) !important;
+    border: none;
 }
 
 @media screen and (min-width: 991px) {

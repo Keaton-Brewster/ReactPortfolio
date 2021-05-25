@@ -1,14 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Container } from "rsuite";
 import GlobalState from "./utils/GlobalState";
 import WebFont from "webfontloader";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import Portfolio from "./Pages/Portfolio";
 import About from "./Pages/About";
 import Resume from "./Pages/Resume";
-import ParticlesBG from "./components/ParticleBackground";
+
 import useViewport from "./utils/useViewport";
 import "rsuite/dist/styles/rsuite-dark.css";
 import * as desktopStyle from "./css/desktop.css";
@@ -16,6 +18,8 @@ import * as tabletStyle from "./css/tablet.css";
 import * as mobileStyle from "./css/mobile.css";
 
 function App() {
+  const [thisPage, setThisPage] = useState("home");
+
   useEffect(() => {
     WebFont.load({
       google: {
@@ -23,6 +27,23 @@ function App() {
       },
     });
   }, []);
+
+  function renderPage() {
+    switch (thisPage) {
+      case "home":
+        return <Home />;
+      case "portfolio":
+        return <Portfolio />;
+      case "contact":
+        return <Contact />;
+      case "resume":
+        return <Resume />;
+      case "about":
+        return <About />;
+      default:
+        return <Home />;
+    }
+  }
 
   const { width } = useViewport();
 
@@ -36,16 +57,11 @@ function App() {
   return (
     <Router>
       <GlobalState>
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/portfolio" component={Portfolio} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/resume" component={Resume} />
-          <Route exact patch="/about" component={About} />
-        </Switch>
-        <ParticlesBG />
+        <Container>
+          <NavBar setThisPage={setThisPage} />
+          {renderPage()}
+          <Footer />
+        </Container>
       </GlobalState>
     </Router>
   );

@@ -1,17 +1,17 @@
-import React from 'react';
-import ContactForm from '../components/ContactForm';
-import Modal from '../components/Modal';
-import { Grid } from 'rsuite';
+import React from "react";
+import ContactForm from "../components/ContactForm";
+import Modal from "../components/Modal";
+import { FlexboxGrid } from "rsuite";
 
 function Contact() {
-    return (
-        <div classname="container">
-            <Grid fluid>
-                <ContactForm />
-            </Grid>
-            <Modal />
-        </div>
-    )
+  return (
+    <div className="container">
+      <FlexboxGrid fluid justify="center">
+        <ContactForm />
+      </FlexboxGrid>
+      <Modal />
+    </div>
+  );
 }
 
 export default Contact;
