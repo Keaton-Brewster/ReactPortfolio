@@ -26,7 +26,7 @@ module.exports = (app) => {
 
         // * just confirm that the account that is sending the mail is valid
         transport.verify((err, success) => {
-            if (err) throw new Error(error);
+            if (err) throw new Error(err);
         });
 
 
