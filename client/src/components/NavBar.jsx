@@ -6,11 +6,10 @@ function NavBar({ setThisPage }) {
   const { width } = useViewport();
   const mobileBP = 480;
   const tabletBP = 992;
-  const desktopBP = 1200;
 
   return (
     <>
-      {width > desktopBP ? (
+      {width >= tabletBP ? (
         <Navbar>
           <Navbar.Body>
             <Nav>
@@ -33,7 +32,7 @@ function NavBar({ setThisPage }) {
             </Nav>
           </Navbar.Body>
         </Navbar>
-      ) : width >= tabletBP ? (
+      ) : width >= mobileBP ? (
         <Navbar>
           <Navbar.Body>
             <Nav>
