@@ -9,12 +9,12 @@ import Contact from "./Pages/Contact";
 import Portfolio from "./Pages/Portfolio";
 import About from "./Pages/About";
 import Resume from "./Pages/Resume";
+import { animate } from "./utils/Scene";
 
-import useViewport from "./utils/useViewport";
 import "rsuite/dist/styles/rsuite-dark.css";
-import * as desktopStyle from "./css/desktop.css";
-import * as tabletStyle from "./css/tablet.css";
-import * as mobileStyle from "./css/mobile.css";
+import "./css/index.css";
+
+animate();
 
 function App() {
   const [thisPage, setThisPage] = useState("home");
@@ -43,15 +43,6 @@ function App() {
         return <Home />;
     }
   }
-
-  const { width } = useViewport();
-
-  useEffect(() => {
-    let screenStyle =
-      width > 1024 ? desktopStyle : width > 720 ? tabletStyle : mobileStyle;
-
-    document.querySelector(":root").style = screenStyle;
-  }, [width]);
 
   return (
     <GlobalState>

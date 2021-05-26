@@ -5,6 +5,12 @@
     --grey: #404346;
     --dark: #221d1b;
     --light: #f6f6f4;
+    margin-bottom: 10rem;
+}
+
+#root {
+    position: absolute;
+    min-width: 100vw;
 }
 
 * {
@@ -15,6 +21,12 @@
 *:before,
 *:after {
     box-sizing: border-box;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 /* redefining color classes */
@@ -82,59 +94,38 @@ a .fa {
     float: left;
 }
 
+/* Styling for the individual portfolio works, just the way I have to do it. */
+
+.flex-grid {
+    margin: 1rem;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+}
+
+
+/*  Work card images */
+#workImg {
+    background: rgb(255, 255, 255);
+}
+
 /* Input styling */
+
 input,
 textarea {
+    width: 100%;
     padding: .5em;
-    color: var(--light) !important;
+    background-color: var(--grey) !important;
+    border-radius: 10px;
+    border: 1px solid var(--dark) !important;
+    resize: none;
 }
 
 textarea:focus,
 input:focus {
-    color: var(--light) !important;
-}
-
-@media screen and (min-width: 991px) {
-    .contactInput {
-        border-radius: 0;
-        background-color: var(--grey) !important;
-        border-style: none;
-        resize: none;
-        min-width: 45vw;
-    }
-}
-
-@media screen and (max-width: 991px) and (min-width: 768px) {
-    .contactInput {
-        border-radius: 0;
-        background-color: var(--grey) !important;
-        border-style: none;
-        resize: none;
-        min-width: 43vw;
-        max-width: 80ex;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .contactInput {
-        border-radius: 0;
-        background-color: var(--grey) !important;
-        border-style: none;
-        resize: none;
-        min-width: 42vw;
-    }
-}
-
-.contactInput {
-    border-radius: 0;
-    background-color: var(--grey) !important;
-    border-style: none;
-    resize: none;
-}
-
-.contactInput:focus {
-    outline-width: 0;
-    background-color: var(--grey);
+    color: var(--dark) !important;
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 5px var(--light);
 }
 
 button.submit {
@@ -203,12 +194,4 @@ a:hover {
 
 .text-center {
     text-align: center;
-}
-
-/* img stuff */
-img#workImg {
-    max-width: 34ex;
-    border-radius: 15px;
-    position: relative;
-    bottom: 4rem;
 }

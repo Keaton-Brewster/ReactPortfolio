@@ -1,7 +1,6 @@
 import { useRef, useState, useContext } from "react";
 import { Context } from "../utils/GlobalState";
 import {
-  Panel,
   FlexboxGrid,
   Col,
   Button,
