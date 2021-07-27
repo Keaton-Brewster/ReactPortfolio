@@ -4,13 +4,14 @@
     --secondary: #e6cf09;
     --grey: #404346;
     --dark: #221d1b;
-    --light: #f6f6f4;
+    --light: hsl(60, 10%, 96%);
     margin-bottom: 10rem;
 }
 
 #root {
     position: absolute;
     min-width: 100vw;
+    display: block !important;
 }
 
 * {
