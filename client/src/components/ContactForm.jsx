@@ -37,8 +37,10 @@ function ContactForm() {
     });
   }
 
-  function submitForm() {
-    if (fields.text !== "") {
+  function submitForm(e) {
+    e.preventDefault();
+    // if (fields.text !== "") {
+    try {
       dispatch({ type: "START_LODAING" });
       dispatch({ type: "SHOW_MODAL" });
       axios
@@ -47,11 +49,14 @@ function ContactForm() {
           dispatch({ type: "FINISHED_LOADING" });
           dispatch({ type: "FORM_SUCCESS" });
         })
-        .catch(() => {
+        .catch((payload) => {
           dispatch({ type: "FORM_FAILURE" });
+          dispatch({ type: "ERROR", payload });
         });
-    } else {
+      // } else {
+    } catch (e) {
       Toast("error", "Please fill out all fields", 2000);
+      dispatch({ type: "ERROR", payload: e });
       return;
     }
   }
@@ -70,11 +75,17 @@ function ContactForm() {
         <Form fluid={true} onSubmit={submitForm}>
           <FormGroup>
             <ControlLabel>Subject</ControlLabel>
-            <input type="text" ref={subject} onChange={handleInputChange} />
+            <input
+              className="contactText"
+              type="text"
+              ref={subject}
+              onChange={handleInputChange}
+            />
           </FormGroup>
           <FormGroup>
             <ControlLabel>Message</ControlLabel>
             <textarea
+              className="contactText"
               ref={text}
               rows={5}
               componentClass="textarea"
@@ -84,6 +95,7 @@ function ContactForm() {
           <FormGroup>
             <ControlLabel>Email</ControlLabel>
             <input
+              className="contactText"
               required
               ref={from}
               onChange={handleInputChange}
@@ -93,7 +105,7 @@ function ContactForm() {
           </FormGroup>
           <FormGroup>
             <ButtonToolbar>
-              <Button type="submit" className="submit">
+              <Button onClick={submitForm} className="submit">
                 send <Icon icon="arrow-circle-right" />
               </Button>
             </ButtonToolbar>
