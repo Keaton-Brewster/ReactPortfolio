@@ -88,7 +88,3 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-server/node_modules/@babel/code-frame/LICENSE
-client/.gitignore
-server/package-lock.json
-client/.firebase/hosting.YnVpbGQ.cache
