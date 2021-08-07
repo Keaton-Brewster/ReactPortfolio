@@ -1,6 +1,6 @@
 import { createContext, useReducer } from "react";
 
-function reducer(state, { type }) {
+function reducer(state, { type, payload }) {
   switch (type) {
     case "SHOW_MODAL":
       return {
@@ -30,6 +30,9 @@ function reducer(state, { type }) {
       return { ...state, loading: true };
     case "FINISHED_LOADING":
       return { ...state, loading: false };
+    case "ERROR":
+      console.log(payload);
+      return state;
     default:
       throw new Error("reducer error in global state");
   }
