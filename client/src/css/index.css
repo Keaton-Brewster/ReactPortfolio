@@ -30,6 +30,10 @@ canvas {
     left: 0;
 }
 
+.contactText:focus {
+    color: var(--light) !important;
+}
+
 /* redefining color classes */
 .bg-primary {
     background-color: var(--primary) !important;
