@@ -9,12 +9,9 @@ import Contact from "./Pages/Contact";
 import Portfolio from "./Pages/Portfolio";
 import About from "./Pages/About";
 import Resume from "./Pages/Resume";
-import { animate } from "./utils/Scene";
 
 import "rsuite/dist/styles/rsuite-dark.css";
 import "./css/index.css";
-
-animate();
 
 function App() {
   const [thisPage, setThisPage] = useState("home");
