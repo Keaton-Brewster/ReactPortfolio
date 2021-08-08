@@ -7,8 +7,8 @@ const transport = nodemailer.createTransport({
   service: "gmail",
   auth: {
     //! For some reason this is not working right now.
-    user: atob("dGhyb3dhd2F5a2VhdG9uZGV2QGdtYWlsLmNvbQ"),
-    pass: atob("S2VhdG9uRGV2"),
+    user: functions.config().express.mail_user,
+    pass: functions.config().express.mail_pass,
   },
 });
 
