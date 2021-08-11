@@ -11,47 +11,51 @@ import {
   Form,
   HelpBlock,
 } from "rsuite";
-import axios from "axios";
 import Toast from "../utils/toast";
+import emailjs, { init } from "emailjs-com";
 const { Item } = FlexboxGrid;
 
 function ContactForm() {
+  init("user_ocB6sFq6aWikNbAvcC0Ld");
   // eslint-disable-next-line
   const [store, dispatch] = useContext(Context);
   const [fields, setFields] = useState({
-    from: atob("dGhyb3dhd2F5a2VhdG9uZGV2QGdtYWlsLmNvbQ=="),
-    to: "keatonbrewsterdev@gmail.com",
+    from_email: "",
+    from_name: "",
     subject: "",
-    text: "",
+    message: "",
   });
 
   const subject = useRef();
-  const text = useRef();
-  const from = useRef();
+  const message = useRef();
+  const email = useRef();
+  const name = useRef();
 
   function handleInputChange() {
     setFields({
       ...fields,
+      from_email: email.current.value,
+      from_name: name.current.value,
       subject: subject.current.value,
-      text: `mesage: ${text.current.value} \n from: ${from.current.value}`,
+      message: message.current.value,
     });
   }
 
   function submitForm(e) {
     e.preventDefault();
-    if (fields.text !== "") {
+    if (fields.message !== "") {
       dispatch({ type: "START_LOADING" });
       dispatch({ type: "SHOW_MODAL" });
-      axios
-        .post("/api/contact", fields)
-        .then(() => {
+      emailjs.send("service_td6pe0j", "portfolio_contact", fields).then(
+        (response) => {
           dispatch({ type: "FINISHED_LOADING" });
           dispatch({ type: "FORM_SUCCESS" });
-        })
-        .catch((payload) => {
+        },
+        (error) => {
           dispatch({ type: "FORM_FAILURE" });
-          dispatch({ type: "ERROR", payload });
-        });
+          dispatch({ type: "ERROR", payload: error });
+        }
+      );
     } else {
       Toast("error", "Please fill out all fields", 2000);
       dispatch({ type: "ERROR", payload: e });
@@ -69,13 +73,25 @@ function ContactForm() {
         sm={20}
         xs={22}
       >
-        <h3>Please reach out, I want to hear from you!</h3>
+        <h3 className="text-center">
+          Please feel free to reach out. I would love to hear from you!
+        </h3>
         <Form fluid={true} onSubmit={submitForm}>
+          <FormGroup>
+            <ControlLabel>Name</ControlLabel>
+            <input
+              required
+              className="contactText"
+              type="message"
+              ref={name}
+              onChange={handleInputChange}
+            />
+          </FormGroup>
           <FormGroup>
             <ControlLabel>Subject</ControlLabel>
             <input
               className="contactText"
-              type="text"
+              type="message"
               ref={subject}
               onChange={handleInputChange}
             />
@@ -83,8 +99,9 @@ function ContactForm() {
           <FormGroup>
             <ControlLabel>Message</ControlLabel>
             <textarea
+              required
               className="contactText"
-              ref={text}
+              ref={message}
               rows={5}
               componentClass="textarea"
               onChange={handleInputChange}
@@ -95,7 +112,7 @@ function ContactForm() {
             <input
               className="contactText"
               required
-              ref={from}
+              ref={email}
               onChange={handleInputChange}
               type="email"
             />

@@ -3,23 +3,19 @@ import { Context } from "../utils/GlobalState";
 import { Modal, Loader } from "rsuite";
 
 function MyModal() {
-  const [{ modal, formSuccess }, dispatch] = useContext(Context);
+  const [{ modal, formSuccess, loading }, dispatch] = useContext(Context);
 
   return (
     <div className="modal-container">
       <Modal show={modal.show} onHide={() => dispatch({ type: "HIDE_MODAL" })}>
         <Modal.Header>
           <Modal.Title>
-            {modal.loading ? null : formSuccess ? (
-              <p>Success!</p>
-            ) : (
-              <p>Uh oh</p>
-            )}
+            {loading ? null : formSuccess ? <p>Success!</p> : <p>Uh oh</p>}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {modal.loading ? (
-            <Loader size="lg" />
+          {loading ? (
+            <Loader size="lg" className="loader" />
           ) : formSuccess ? (
             <p>
               Thank you for reaching out. I hope to get in touch with you soon

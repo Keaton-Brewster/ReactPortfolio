@@ -15,6 +15,7 @@ function reducer(state, { type, payload }) {
           ...state,
           show: false,
         },
+        loading: true,
       };
     case "FORM_SUCCESS":
       return {

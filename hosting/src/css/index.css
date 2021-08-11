@@ -99,6 +99,13 @@ a .fa {
     float: left;
 }
 
+.loader {
+    padding: 5%;
+    position: relative;
+    top: 1%;
+    left: 40%;
+}
+
 /* Styling for the individual portfolio works, just the way I have to do it. */
 
 .flex-grid {
