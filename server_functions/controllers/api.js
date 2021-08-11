@@ -7,8 +7,8 @@ const transport = nodemailer.createTransport({
   service: "gmail",
   auth: {
     //! For some reason this is not working right now.
-    user: functions.config().express.mail_user,
-    pass: functions.config().express.mail_pass,
+    user: process.env.MAILER,
+    pass: process.env.PASS,
   },
 });
 

@@ -42,6 +42,6 @@ app.post("/api/contact", (request, response) => {
   }
 });
 
-app.listen(PORT);
+// app.listen(PORT);
 
 exports.express = functions.https.onRequest(app);

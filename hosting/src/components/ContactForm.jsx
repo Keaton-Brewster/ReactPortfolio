@@ -39,9 +39,8 @@ function ContactForm() {
 
   function submitForm(e) {
     e.preventDefault();
-    // if (fields.text !== "") {
-    try {
-      dispatch({ type: "START_LODAING" });
+    if (fields.text !== "") {
+      dispatch({ type: "START_LOADING" });
       dispatch({ type: "SHOW_MODAL" });
       axios
         .post("/api/contact", fields)
@@ -53,8 +52,7 @@ function ContactForm() {
           dispatch({ type: "FORM_FAILURE" });
           dispatch({ type: "ERROR", payload });
         });
-      // } else {
-    } catch (e) {
+    } else {
       Toast("error", "Please fill out all fields", 2000);
       dispatch({ type: "ERROR", payload: e });
       return;
