@@ -19,7 +19,7 @@
     "start:prod": "node server/index.js",
     "start:dev": "concurrently \"nodemon server_functions/index.js\" \"npm run client\"",
     "client": "cd hosting && npm run start",
-    "install": "cd client && npm install",
+    "install": "cd hosting && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
