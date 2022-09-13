@@ -16,6 +16,13 @@ const Routinify = new Work(
   "Routinify.png"
 );
 
+const QRCodeGenerator = new Work(
+  "QR Code Generator",
+  "https://qr-code-generator-kpb.web.app/",
+  "https://github.com/Keaton-Brewster/qrcode_generator",
+  "Generate your own custom QR code for free. A simple QR code generator as proof of concept, and a further exploration of React with TypeScript."
+);
+
 const NoteTaker = new Work(
   "Notes Web App",
   "https://notetaker-keatonbrewster.herokuapp.com/",
@@ -73,6 +80,7 @@ const devlr = new Work(
 
 const works = [
   devlr,
+  QRCodeGenerator,
   Routinify,
   BudgetTracker,
   FitnessTracker,
